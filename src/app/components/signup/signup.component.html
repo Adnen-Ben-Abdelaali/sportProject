@@ -1,0 +1,130 @@
+<div class="hero overlay" style="background-image: url('images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Sign Up Interface </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+            <!--signupForm-->
+          <form [formGroup]="SignUpUserForm">
+
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="UserFirstName" required="required" formControlName="userFirstName" >
+            </div>
+
+            <div *ngIf="SignUpUserForm.controls['userFirstName'].invalid && (SignUpUserForm.controls['userFirstName'].touched || SignUpUserForm.controls['userFirstName'].dirty)">
+                <div *ngIf="SignUpUserForm.controls['userFirstName'].errors.required" >
+                  User firstName is required
+                </div>
+                <div *ngIf="SignUpUserForm.controls['userFirstName'].errors.minlength">
+                  User firstName must have at least 3 characters
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="UserLastName" required="required" formControlName="userLastName">
+            </div>
+
+            <div *ngIf="SignUpUserForm.controls['userLastName'].invalid && (SignUpUserForm.controls['userLastName'].touched || SignUpUserForm.controls['userLastName'].dirty)">
+                <div *ngIf="SignUpUserForm.controls['userFirstName'].errors.required" >
+                  User lastName is required 
+                </div>
+                <div *ngIf="SignUpUserForm.controls['userLastName'].errors.minlength">
+                  User lastName must have at least 5 characters
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="TelephoneNumber" required="required" formControlName="userTel">
+            </div>
+
+            <div *ngIf="SignUpUserForm.controls['userTel'].invalid && (SignUpUserForm.controls['userTel'].touched || SignUpUserForm.controls['userTel'].dirty)">
+                <div *ngIf="SignUpUserForm.controls['userTel'].errors.required" >
+                  User TelephoneNumber is required
+                </div>
+                <div *ngIf="SignUpUserForm.controls['userTel'].errors.minlength">
+                  User TelephoneNumber must have at least 8 numbers.
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="UserEmail" required="required" formControlName="userEmail">
+            </div>
+
+            <div *ngIf="SignUpUserForm.controls['userEmail'].invalid && (SignUpUserForm.controls['userEmail'].touched || SignUpUserForm.controls['userEmail'].dirty)">
+              <div *ngIf="SignUpUserForm.controls['userEmail'].errors.required" >
+                  User email is required
+              </div>
+              <div *ngIf="SignUpUserForm.controls['userEmail'].errors.email">
+                Email must be a valid email address
+              </div>
+            </div>  
+
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="UserPassword" required="required" formControlName="userPassword">
+            </div>
+
+            <div *ngIf="SignUpUserForm.controls['userPassword'].invalid && (SignUpUserForm.controls['userPassword'].touched || SignUpUserForm.controls['userPassword'].dirty)">
+              <div *ngIf="SignUpUserForm.controls['userPassword'].errors.required" >
+                  User Password is required
+              </div>
+              <div *ngIf="SignUpUserForm.controls['userPassword'].errors.minlength">
+                User password must have at least 8 characters
+              </div>
+            </div>  
+
+            
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="confirmPassword" required="required" formControlName="confirmPwd">
+            </div>
+
+            <div *ngIf="SignUpUserForm.controls['confirmPwd'].invalid && (SignUpUserForm.controls['confirmPwd'].touched || SignUpUserForm.controls['confirmPwd'].dirty)">
+              <div *ngIf="SignUpUserForm.controls['confirmPwd'].errors.required" >
+                  confirmPassword is required
+              </div>
+              <div *ngIf="SignUpUserForm.controls['userPassword'].errors.minlength">
+                ConfirmPassword must have at least 8 characters
+              </div>
+            </div>  
+
+            <div *ngIf="SignUpUserForm.value.userPassword != SignUpUserForm.value.confirmPwd">
+              Passwords must match
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary py-3 px-5" value="Sign Up" (click)="userSignUp(SignUpUserForm.value)">
+            </div>
+          </form>  
+        </div>
+        <div class="col-lg-4 ml-auto">
+          
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <strong class="text-white d-block">Address</strong>
+              273 South Riverview Rd. <br> New York, NY 10011
+            </li>
+            <li class="mb-2">
+              <strong class="text-white d-block">Email</strong>
+              <a href="#">info@unslate.co</a>
+            </li>
+            <li class="mb-2">
+              <strong class="text-white d-block">
+                Phone
+              </strong>
+              <a href="#">+12 345 6789 012</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

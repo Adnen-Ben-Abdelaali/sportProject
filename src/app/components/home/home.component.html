@@ -1,0 +1,60 @@
+<body>
+
+    <div class="site-wrap">
+  
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+  
+  <!-- create header components -->
+      <app-header></app-header>
+
+
+      <div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-5 ml-auto">
+              <h1 class="text-white">World Cup Event</h1>
+              <p>Welcome to our web site,it will up date your Soccer knowledge all over the World with having the latest-news.</p>
+              <div id="date-countdown"></div>
+              <p>
+                <a href="#" class="btn btn-primary py-3 px-4 mr-3">Book Ticket</a>
+                <a href="#" class="more light">Learn More</a>
+              </p>  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+<!--create the win-loss component -->      
+   <app-match-prototype></app-match-prototype>
+    
+<!--create the latest-news component -->  
+      <app-latest-news></app-latest-news>
+
+<!--create the teams-result component -->       
+      <app-teams-result></app-teams-result>
+
+
+<!--create the videos component -->  
+      <app-videos></app-videos>
+  
+<!--create the blog component -->        
+      <app-blog></app-blog>
+  
+  <!--create footer components-->
+  
+   <app-footer></app-footer>
+  
+  
+  
+    </div>
+    
+  
+  </body>
